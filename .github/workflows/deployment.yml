@@ -1,0 +1,25 @@
+name: deployment
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout this repository
+      uses: actions/checkout@v2
+    - name: Download Slab from GitHub Releases
+      run: |
+        wget https://github.com/hypered/slab/releases/download/v0.0.3.0-alpha/slab-v0.0.3.0-linux-x86-64-musl -O slab
+        chmod +x slab
+    - name: Build the static site
+      run: |
+        ./slab build content/
+        cp -r static/ _site/
+        cp static/favicon.ico _site/
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site

@@ -1,0 +1,43 @@
+frag page
+  doctype html
+  html(dir="ltr", lang="en")
+    head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      link(rel="stylesheet", href="./static/css/struct.css")
+      link(rel="icon", href="./static/favicon.ico")
+      title The Slab markup language
+    body.u-container-vertical
+      header
+        .u-container
+          .u-bar.u-bar--top-aligned
+            .u-bar__left
+              style.
+                .a-logo { color: black; text-decoration: none; }
+              .menu-item-height
+                a.a-logo(href="/")
+                  div
+                    span.logo Slab
+            .u-bar__right
+              -- empty
+ 
+      main
+        content
+      footer
+        .u-container.u-container-top
+          hr
+          .c-text.flow.limit-40ch
+            p
+              small Slab is written in Belgium by <a href="https://hypered.be/en/">Võ Minh Thu</a> (<a href="https://twitter.com/noteed">@noteed</a>).
+
+page
+  .u-container.u-flow-c-4
+    .c-content.flow-all.u-flow-c-4.limit-42em
+      h1 Welcome to Slab
+
+    .switcher
+      .flow
+        p Slab is a programmable markup language that simplifies the creation of HTML. It combines concise notation with standard programming constructs to create reusable web content more efficiently.
+
+      .c-content.flow
+        -- empty
